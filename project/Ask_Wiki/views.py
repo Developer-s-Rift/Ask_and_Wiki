@@ -36,6 +36,10 @@ def index(request):
     for i in pos_list :
         if i[1] == 'NNP' :
             print(i[0])
+            
+    links = page_py.links
+    for title in sorted(links.keys()):
+        print("%s: %s" % (title, links[title]))
     
     # print(pos_list[1][1])
     # print(pos_list[2][1])
