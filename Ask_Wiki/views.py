@@ -289,9 +289,7 @@ def main(request):
     
 ### 키워드의 타이틀, 서머리 DB에 넣는 곳
 
-    
-
-     final_temp3_list = []
+    final_temp3_list = []
 
     a = page_py.summary
 
