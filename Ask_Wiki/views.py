@@ -76,7 +76,6 @@ def summary(list_a):
         
         if len(check_DB) == 0 :
             print("DB 새로 추가, 단어 이름 : ")
-            print(k)
             page_py = wiki.page(k)
             categories = page_py.categories
             c = categories.get('분류:동음이의어 문서')
@@ -105,7 +104,6 @@ def summary(list_a):
 
         else : 
             print("이건 이미 DB에 있는 값임, 단어 이름 :  ")
-            print(k)
             final_temp_list.append(check_DB[0].title)
             final_temp_list.append(check_DB[0].summary)
             final_list.append(final_temp_list)
@@ -113,18 +111,6 @@ def summary(list_a):
 def index(request):
     return render(request, 'Ask_Wiki/index.html')
 
-
-def ajax(request):
-    # request.POST.get('json형식 안의 내용') from html
-    from_html_text = request.POST.get('text')
-    print(from_html_text)
-
-    context = {
-        'text_return': 'aaaaa',
-        'text_return2': '서버에서 보낸data',
-    }
-    
-    return HttpResponse(simplejson.dumps(context), 'Ask_Wiki/index.html')
 
 
 def result(request):
@@ -239,7 +225,6 @@ def main(request):
 
                 D = sum(Counting_List, [])
                 for d in Counting_List :
-                    print(Counting_List)
                     tfidf = {}
                     for t in d:
                         # print(f'{t} : {tf_idf(t,d,D)}')
@@ -353,7 +338,6 @@ def main(request):
 
     # DB 데이터 업데이트 안되었으면 아래에서 한번 더 선언해줌
     second_keyword_name.reverse()
-    second_keyword_name3 = [["aa","11"],["bb","22"]]
     DB = Wiki.objects.all()
 #서머리 가져오는게 렉걸려서 DB에 넣어서 확인, DB에 없으면 서머리함수, 있으면 패스
 
