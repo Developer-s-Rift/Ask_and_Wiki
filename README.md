@@ -5,4 +5,4 @@
 
 
 
-#### 보험용 배포 URL : https://final-askwiki.herokuapp.com/Ask_Wiki
+#### 보험용 배포 URL : https://final-askwiki.herokuapp.com/
